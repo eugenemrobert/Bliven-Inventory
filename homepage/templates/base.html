@@ -1,5 +1,4 @@
 {% load static %}
-<!-- Log on to codeastro.com for more projects -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +22,6 @@
     <title>IMS - {% block title %}Title Missing{% endblock title %}</title>
 
 </head>
-<!-- Log on to codeastro.com for more projects -->
 <body>
 
     <!-- Dialog Box CSS  -->
@@ -43,7 +41,7 @@
         <nav id="sidebar">
             
             <div class="sidebar-header">
-                <a class="navbar-brand titlefont mr-4" href="{% url 'home' %}"><h3>IMS-Django </h3></a>
+                <a class="navbar-brand titlefont mr-4" href="{% url 'home' %}"><h3>Bliven</h3></a>
             </div>
 
             <ul class="list-unstyled sidebar-components">
@@ -80,8 +78,15 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="#ratiosSubmenu" data-toggle="collapse" class="dropdown-toggle sidebar-text right-arrow sidebar-button"><i class="fas fa-search-plus"></i> Financial Ratios</a>
+                    <ul class="collapse list-unstyled" id="ratiosSubmenu">
+                        <li> <a class="sidebar-text sidebar-subitem sidebar-button" href="{% url 'new-supplier' %}"><i class="fas fa-dot-circle"></i> Inventory Turnover Ratio</a> </li>
+                        <li> <a class="sidebar-text sidebar-subitem sidebar-button" href="{% url 'suppliers-list' %}"><i class="fas fa-dot-circle"></i> Inventory Turnover Days</a> </li>
+                    </ul>
+                </li>
+                <li>
                     <a class="sidebar-text sidebar-button" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> About</a>
-                </li><!-- Log on to codeastro.com for more projects -->
+                </li>
 
                 <li class="bottomleft">
                     <a href="#UserSubmenu" data-toggle="collapse" class="dropdown-toggle sidebar-text right-arrow sidebar-button"><i class="fas fa-user-circle"></i> {{ request.user.username }}</a>
@@ -131,7 +136,6 @@
         </div>
     
     </main>    
-        <!-- Log on to codeastro.com for more projects -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'bootstrap/jquery-3.3.1.slim.min.js' %}"></script>
     <script src="{% static 'bootstrap/popper.min.js' %}"></script>

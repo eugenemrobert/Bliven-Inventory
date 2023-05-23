@@ -10,7 +10,7 @@
     
     <div class="row" style="color: #575757; font-style: bold; font-size: 3rem;">
         <div class="col-md-8">Purchases List</div>
-        <div class="col-md-4">            <!-- Log on to codeastro.com for more projects -->   
+        <div class="col-md-4">               
             <div style="float:right;"> <a class="btn btn-success" href="{% url 'select-supplier' %}">New Incoming Stock</a> </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
                         <a href="{% url 'supplier' purchase.supplier.name %}">{{ purchase.supplier }}</a> <br> 
                     {% endif %}
                     <small style="color: #909494">Ph No : {{ purchase.supplier.phone }}</small> 
-                </td><!-- Log on to codeastro.com for more projects -->
+                </td>
                 <td class="align-middle">{% for item in purchase.get_items_list %} {{ item.stock.name }} <br> {% endfor %}</td>
                 <td class="align-middle">{% for item in purchase.get_items_list %} {{ item.quantity }} <br> {% endfor %}</td>     
                 <td class="align-middle">${{ purchase.get_total_price }}</td>
@@ -82,12 +82,12 @@
 
 {% else %}
 
-        <tbody></tbody>  <!-- Log on to codeastro.com for more projects --> 
+        <tbody></tbody>   
     </table>
 
     <br><br><br><br><br><br><br><br>
     <div style="color: #575757; font-style: bold; font-size: 1.5rem; text-align: center;">The records are empty. Please try adding some.</div>
-<!-- Log on to codeastro.com for more projects -->
+
 {% endif %}
 
 {% endblock content %}

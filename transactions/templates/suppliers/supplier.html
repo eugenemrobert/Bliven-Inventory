@@ -9,7 +9,7 @@
 {% block content %}
 
     <div class="content-section">
-        <div class="media"><!-- Log on to codeastro.com for more projects -->
+        <div class="media">
             <div class="media-body">
                 <h2 style="color:#575757;" class="account-heading">&nbsp;{{ supplier.name }}</h2>
                 <a href="{% url 'edit-supplier' supplier.pk %}" class="btn btn-info" style="float: right;">Edit Details</a>
@@ -43,7 +43,7 @@
                 <th width="15%">Total Purchased Price</th>
                 <th width="15%">Purchased Date</th>
                 <th width="30%">Actions</th>
-            </tr><!-- Log on to codeastro.com for more projects -->
+            </tr>
         </thead>
       
         <tbody>
@@ -55,7 +55,7 @@
                 <td class="align-middle">${{ purchase.get_total_price }}</td>
                 <td class="align-middle">{{ purchase.time.date }}</td>
                 <td class="align-middle"> <a href="{% url 'purchase-bill' purchase.billno %}" class="btn btn-secondary">View Bill</a> <a href="{% url 'delete-purchase' purchase.pk %}" class="btn btn-danger">Delete Bill</a> </td>
-            </tr><!-- Log on to codeastro.com for more projects -->
+            </tr>
             {% endfor %}
         </tbody>
 
@@ -83,7 +83,7 @@
             {% endif %}
 
         {% endif %}
-    </div><!-- Log on to codeastro.com for more projects -->
+    </div>
 
 </div>
 
