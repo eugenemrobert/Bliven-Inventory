@@ -10,6 +10,7 @@ from .models import Stock
 from .forms import StockForm
 from django_filters.views import FilterView
 from .filters import StockFilter
+from django.db.models import Sum
 
 
 class StockListView(FilterView):
@@ -17,7 +18,6 @@ class StockListView(FilterView):
     queryset = Stock.objects.filter(is_deleted=False)
     template_name = 'inventory.html'
     paginate_by = 10
-
 
 class StockCreateView(SuccessMessageMixin, CreateView):                                 # createview class to add new stock, mixin used to display message
     model = Stock                                                                       # setting 'Stock' model as model
@@ -62,3 +62,7 @@ class StockDeleteView(View):                                                    
         stock.save()                                               
         messages.success(request, self.success_message)
         return redirect('inventory')
+
+def inventory_sum_view(request):
+    total_sum = Stock.objects.aggregate(sum=models.Sum('quantity'))['sum']
+    return render(request, 'inventory_sum.html', {'total_sum': total_sum})

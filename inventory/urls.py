@@ -7,4 +7,5 @@ urlpatterns = [
     path('new', views.StockCreateView.as_view(), name='new-stock'),
     path('stock/<pk>/edit', views.StockUpdateView.as_view(), name='edit-stock'),
     path('stock/<pk>/delete', views.StockDeleteView.as_view(), name='delete-stock'),
+    path('inventory/sum/', views.inventory_sum_view, name='inventory_sum'),
 ]

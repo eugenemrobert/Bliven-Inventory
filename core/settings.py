@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'inventory.apps.InventoryConfig',
     'transactions.apps.TransactionsConfig',
+    'financialRatios.apps.FinancialratiosConfig',
 
 ]
 

@@ -40,6 +40,7 @@
                 <th>Actions</th>
             </tr>
         </thead>
+        
                   
 {% if object_list %}
 
@@ -55,10 +56,15 @@
                         <a href="{% url 'delete-stock' stock.pk %}" class="btn btn-danger btn-sm"> Delete Stock </a>
                     </td>          
                 </tr>
-            {% endfor %}                   
+            {% endfor %}
+            <tr>
+                <th>Total</th>
+                <td>
+                    <p>{{ total_sum }}</p>
+                </td>
+            </tr>                   
         </tbody>
-
-    </table>  
+    </table> 
 
     <div class="align-middle">
         {% if is_paginated %}
